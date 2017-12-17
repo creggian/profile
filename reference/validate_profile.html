@@ -110,7 +110,7 @@ for compatibility with the most recent format
 
     <p>The profile data is stored in a named list of tibbles.
 (Exception: Components with names starting with a dot are permitted
-but will be ignored.)
+after the required components, but will be ignored.)
 This named list has the following components, subsequently referred to as
 <em>tables</em>:</p><ul>
 <li><p><code>sample_types</code></p></li>
@@ -119,10 +119,14 @@ This named list has the following components, subsequently referred to as
 <li><p><code>functions</code></p></li>
 </ul>
     <p>The <code>sample_types</code> table has two character columns, <code>type</code> and <code>unit</code>.
+Additional columns with a leading dot in the name are allowed
+after the required columns.
 It is currently restricted to one row with values <code>"samples"</code> and <code>"count"</code>,
 respectively.</p>
 <p>The <code>samples</code> table has two columns, <code>value</code> (integer) and <code>locations</code>
 (list).
+Additional columns with a leading dot in the name are allowed
+after the required columns.
 The <code>value</code> column describes the number of consecutive samples for the
 given location, and must be greater than zero.
 Each element of the <code>locations</code> column is a tibble with one integer column,
@@ -131,6 +135,8 @@ For each <code>location_id</code> value a corresponding observation in the <code
 table must exist,</p>
 <p>The <code>locations</code> table has three integer columns, <code>location_id</code>,
 <code>function_id</code>, and <code>line</code>.
+Additional columns with a leading dot in the name are allowed
+after the required columns.
 All <code>location_id</code> values are unique.
 For each <code>function_id</code> value a corresponding observation in the <code>functions</code>
 table must exist. <code>NA</code> values are permitted.
@@ -139,6 +145,8 @@ corresponds to, zero if unknown. All values must be nonnegative.
 <code>NA</code> values are permitted.</p>
 <p>The <code>functions</code> table has five columns, <code>function_id</code> (integer),
 <code>name</code>, <code>system_name</code> and <code>file_name</code> (character), and <code>start_line</code> (integer).
+Additional columns with a leading dot in the name are allowed
+after the required columns.
 All <code>function_id</code> values are unique.
 The <code>name</code>, <code>system_name</code> and <code>filename</code> columns describe function names
 (demangled and mangled), and source file names for a function.
