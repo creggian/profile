@@ -132,7 +132,9 @@ given location, and must be greater than zero.
 Each element of the <code>locations</code> column is a tibble with one integer column,
 <code>location_id</code>.
 For each <code>location_id</code> value a corresponding observation in the <code>locations</code>
-table must exist,</p>
+table must exist.
+The locations are listed in inner-first order, i.e., the first location
+corresponds to the innermost entry of the stack trace.</p>
 <p>The <code>locations</code> table has three integer columns, <code>location_id</code>,
 <code>function_id</code>, and <code>line</code>.
 Additional columns with a leading dot in the name are allowed
@@ -150,6 +152,7 @@ after the required columns.
 All <code>function_id</code> values are unique.
 The <code>name</code>, <code>system_name</code> and <code>filename</code> columns describe function names
 (demangled and mangled), and source file names for a function.
+Both <code>name</code> and <code>system_name</code> must not contain empty strings.
 The <code>start_line</code> column describes the start line of a function in its
 source file, zero if unknown. All values must be nonnegative.</p>
     

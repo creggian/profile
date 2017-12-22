@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • profile</title>
+<title>Write profiler data to an R profiler file — write_rprof • profile</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -78,79 +78,38 @@
       </header>
 
       <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;0.0-0</small>
-      </h1>
+    <h1>Write profiler data to an R profiler file</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    
+    <p>Write profiler data to an R profiler file</p>
+    
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <pre class="usage"><span class='fu'>write_rprof</span>(<span class='no'>path</span>, <span class='no'>ds</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>A file name</p></td>
+    </tr>
+    <tr>
+      <th>ds</th>
+      <td><p>Profiler data</p></td>
+    </tr>
+    </table>
+    
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="profile-package.html">profile-package</a></code> </p>
-          </td>
-          <td><p>The profiler package defines a stable data format for profiler data,
-see <code><a href='reference/validate_profile.html'>validate_profile()</a></code> for a definition.
-It supports reading and writing Rprof <code>.out</code> and
-<a href='https://github.com/google/pprof'>pprof</a> <code>.proto</code> files.</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="read_pprof.html">read_pprof</a></code> </p>
-          </td>
-          <td><p>Read profiler data from a proto file</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="read_rprof.html">read_rprof</a></code> </p>
-          </td>
-          <td><p>Read profiler data from an R profiler file</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="validate_profile.html">validate_profile_v1</a></code> <code><a href="validate_profile.html">validate_profile</a></code> </p>
-          </td>
-          <td><p>Definition of the profile data format</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="write_pprof.html">write_pprof</a></code> </p>
-          </td>
-          <td><p>Write profiler data to a proto file</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="write_rprof.html">write_rprof</a></code> </p>
-          </td>
-          <td><p>Write profiler data to an R profiler file</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+                </ul>
+
   </div>
 </div>
 
