@@ -86,23 +86,19 @@
     
     <p>The data format is stable between major releases.
 In case of major updates, compatibility functions will be provided.</p>
-<p>The <code>validate_profile_v1()</code> function checks a profile data object
-for compatibility with the v1.0.0 format.</p>
 <p>The <code>validate_profile()</code> function checks a profile data object
-for compatibility with the most recent format
-(currently v1.0.0).</p>
+for compatibility with the specification.
+Versioning information embedded in the data is considered.</p>
     
 
-    <pre class="usage"><span class='fu'>validate_profile_v1</span>(<span class='no'>x</span>)
-
-<span class='fu'>validate_profile</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>validate_profile</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>Profile data as returned by <code><a href='read_pprof.html'>read_pprof()</a></code>.</p></td>
+      <td><p>Profile data, e.g., as returned by <code><a href='read_pprof.html'>read_pprof()</a></code> or <code><a href='read_rprof.html'>read_rprof()</a></code>.</p></td>
     </tr>
     </table>
     
@@ -113,12 +109,18 @@ for compatibility with the most recent format
 after the required components, but will be ignored.)
 This named list has the following components, subsequently referred to as
 <em>tables</em>:</p><ul>
+<li><p><code>meta</code></p></li>
 <li><p><code>sample_types</code></p></li>
 <li><p><code>samples</code></p></li>
 <li><p><code>locations</code></p></li>
 <li><p><code>functions</code></p></li>
 </ul>
-    <p>The <code>sample_types</code> table has two character columns, <code>type</code> and <code>unit</code>.
+    <p>The <code>meta</code> table has two character columns, <code>key</code> and <code>value</code>.
+Additional columns with a leading dot in the name are allowed
+after the required columns.
+It is currently restricted to one row with key <code>"version"</code> and a value
+that is accepted by <code>package_version()</code>.</p>
+<p>The <code>sample_types</code> table has two character columns, <code>type</code> and <code>unit</code>.
 Additional columns with a leading dot in the name are allowed
 after the required columns.
 It is currently restricted to one row with values <code>"samples"</code> and <code>"count"</code>,
