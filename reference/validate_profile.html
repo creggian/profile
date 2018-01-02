@@ -104,16 +104,17 @@ Versioning information embedded in the data is considered.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The profile data is stored in a named list of tibbles.
-(Exception: Components with names starting with a dot are permitted
-after the required components, but will be ignored.)
+    <p>The profile data is stored in an object of class <code>"profile_data"</code>,
+which is a named list of tibbles.
 This named list has the following components, subsequently referred to as
 <em>tables</em>:</p><ul>
 <li><p><code>meta</code></p></li>
 <li><p><code>sample_types</code></p></li>
 <li><p><code>samples</code></p></li>
 <li><p><code>locations</code></p></li>
-<li><p><code>functions</code></p></li>
+<li><p><code>functions</code>
+(Components with names starting with a dot are permitted
+after the required components, but will be ignored.)</p></li>
 </ul>
     <p>The <code>meta</code> table has two character columns, <code>key</code> and <code>value</code>.
 Additional columns with a leading dot in the name are allowed
