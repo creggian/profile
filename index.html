@@ -93,11 +93,13 @@ res &lt;-<span class="st"> </span><span class="kw">vapply</span>(x, function(x) 
 
 <span class="kw">library</span>(profile)
 ds &lt;-<span class="st"> </span><span class="kw"><a href="reference/read_rprof.html">read_rprof</a></span>(rprof_path)
+<span class="co">#&gt; Warning: Incomplete sampling information, increase bufsize in `Rprof()` or</span>
+<span class="co">#&gt; `start_profiler()` call</span>
 <span class="kw">names</span>(ds)
 <span class="co">#&gt; [1] "meta"         "sample_types" "samples"      "locations"   </span>
 <span class="co">#&gt; [5] "functions"    ".rprof"</span>
 <span class="kw">nrow</span>(ds$samples)
-<span class="co">#&gt; [1] 60</span>
+<span class="co">#&gt; [1] 41</span>
 <span class="kw"><a href="reference/write_pprof.html">write_pprof</a></span>(ds, <span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">"1.pb.gz"</span>))</code></pre></div>
 </div>
 </div>
