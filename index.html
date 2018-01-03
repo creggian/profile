@@ -66,7 +66,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#profile" class="anchor"></a>profile</h1></div>
 
-<p>The goal of profile is to read and write files that contain run time profiling data. Currently, profile supports:</p>
+<p>The goal of profile is to read and write files that contain run time profiling data. Currently, <em>profile</em> supports:</p>
 <ul>
 <li>Files created by <a href="https://www.rdocumentation.org/packages/utils/versions/3.4.3/topics/Rprof"><code>Rprof()</code></a>
 </li>
@@ -96,12 +96,12 @@ res &lt;-<span class="st"> </span><span class="kw">vapply</span>(x, function(x) 
 ds &lt;-<span class="st"> </span><span class="kw"><a href="reference/read_rprof.html">read_rprof</a></span>(rprof_path)
 <span class="co">#&gt; Warning: Incomplete sampling information, increase bufsize in `Rprof()` or</span>
 <span class="co">#&gt; `start_profiler()` call</span>
+ds
+<span class="co">#&gt; Profile data: 46 samples</span>
 <span class="kw">names</span>(ds)
 <span class="co">#&gt; [1] "meta"         "sample_types" "samples"      "locations"   </span>
 <span class="co">#&gt; [5] "functions"    ".rprof"</span>
-<span class="kw">nrow</span>(ds$samples)
-<span class="co">#&gt; [1] 44</span>
-<span class="kw"><a href="reference/write_pprof.html">write_pprof</a></span>(ds, <span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">"1.pb.gz"</span>))</code></pre></div>
+<span class="kw"><a href="reference/read_rprof.html">write_pprof</a></span>(ds, <span class="kw">file.path</span>(<span class="kw">tempdir</span>(), <span class="st">"1.pb.gz"</span>))</code></pre></div>
 </div>
 </div>
 </div>
